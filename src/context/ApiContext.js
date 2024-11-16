@@ -46,8 +46,14 @@ export const ApiProvider = ({children}) => {
       getAdat("/carts", setCartLista);
   
     }, []);
+
+    const kosarhozAd= (item) => {
+        
+    }
+
   
     return (
       <ApiContext.Provider value={{ tLista, cartLista, postAdat , getAdat}}>{children}</ApiContext.Provider>
-    );  
+    );
+
 }
