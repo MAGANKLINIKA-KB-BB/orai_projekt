@@ -3,6 +3,7 @@ import Layout from './pages/Layout';
 import Kosar from './pages/Kosar';
 import AdminPage from './pages/Adminpage';
 import PublicPage from './pages/Publicpage';
+import Login from './pages/Login';
 
 function App() {
   return (
@@ -15,6 +16,7 @@ function App() {
             <Route path="/" element={<Layout />}>
               <Route index element={<PublicPage />} />
               <Route path="kosar" element={<Kosar />} />
+              <Route path="login" element={<Login />} />
               <Route path="admin" element={<AdminPage />} />
               {/* <Route path="*" element={<NoPage />} /> */}
             </Route>

@@ -13,6 +13,9 @@ const Layout = () => {
                     <Nav.Link href="/kosar">Kosár</Nav.Link>
                 </Nav.Item>
                 <Nav.Item>
+                    <Nav.Link href="/login">Bejelentkezés</Nav.Link>
+                </Nav.Item>
+                <Nav.Item>
                     <Nav.Link href="/admin">Admin</Nav.Link>
                 </Nav.Item>
             </Nav>

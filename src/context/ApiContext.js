@@ -65,7 +65,7 @@ export const ApiProvider = ({children}) => {
 
         setText(value)
         tLista.forEach(e => {
-          if (value.lowerCase() == e.title.lowerCase()) {
+          if (value.lowerCase() === e.title.lowerCase()) {
             
           }
           
