@@ -1,8 +1,9 @@
-import { Children, createContext } from "react";
+import { createContext, useEffect, useState } from "react";
+import { MyAxios } from "./baseUrlAxios";
 
 export const ApiContext  = createContext("")
 
-export const ApiProvider = ({Children}) => {
+export const ApiProvider = ({children}) => {
     const [tLista, setTLista] = useState([]);
 
     //asszinkron hívás axion-al
@@ -46,5 +47,5 @@ export const ApiProvider = ({Children}) => {
   
     return (
       <ApiContext.Provider value={{ tLista, postAdat }}>{children}</ApiContext.Provider>
-    );
+    );  
 }
