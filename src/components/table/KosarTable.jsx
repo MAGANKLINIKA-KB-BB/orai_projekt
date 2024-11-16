@@ -5,6 +5,7 @@ import KosarRow from '../tablerow/KosarRow'
 
 const KosarTable = () => {
     const { cartObj } = useContext(ApiContext)
+    console.log(cartObj)
     return (
         <div>
             <h1>
@@ -13,16 +14,17 @@ const KosarTable = () => {
             <Table striped bordered hover>
                 <thead>
                     <tr>
-                        <th>ID</th>
-                        <th>userId</th>
-                        <th>Dátum</th>
+                        <th>termék kód</th>
+                        <th>darab</th>
                     </tr>
                 </thead>
                 <tbody>
                     {
-                        cartObj.products.map((item, i) => {
-                            return <KosarRow key={i} item={item} />
-                        })
+                        cartObj.products ?
+                            cartObj.products.map((item, i) => {
+                                return <KosarRow key={i} item={item} />
+                            }) :
+                            "Nincs adat"
                     }
                 </tbody>
             </Table>
