@@ -7,6 +7,7 @@ export const ApiProvider = ({children}) => {
     const [tLista, setTLista] = useState([]);
     const [cartObj, setCartObj] = useState({});
     const [cartList, setCartList] = useState([]);
+    const [text ,setText] = useState("")
 
     //asszinkron hívás axion-al
     function getAdat(vegpont, callBackFunc) {
@@ -41,11 +42,41 @@ export const ApiProvider = ({children}) => {
           // always executed
         });
     }
+    function deleteItem(id){
+      MyAxios
+    .delete(`/products/${id}`) // Assuming your API supports DELETE requests
+    .then((response) => {
+      console.log(`Elem törlése ID: ${id}`);
+      setTLista((prev) => prev.filter((item) => item.id !== id)); // Update state
+    })
+    .catch((error) => {
+      console.error(`Error deleting item with ID: ${id}`, error);
+    });
+    }
+    function deleteAll() {
+          console.log("Deleted all items.");
+          
+          const tbody = document.querySelector('#tbody')
+          tbody.innerHTML = ""
+    }
+
+      const SearchTable = (event)=>{
+        const value = event.target.value
+
+        setText(value)
+        tLista.forEach(e => {
+          if (value.lowerCase() == e.title.lowerCase()) {
+            
+          }
+          
+        });
+      }
   
     useEffect(() => {
       getAdat("/products", setTLista);
       getAdat("/carts/2", setCartObj);
   
+      getAdat("/carts", setCartLista);  
     }, []);
 
     const kosarhozAd= (item) => {
@@ -56,6 +87,6 @@ export const ApiProvider = ({children}) => {
 
   
     return (
-      <ApiContext.Provider value={{ tLista, cartObj, kosarhozAd, postAdat , getAdat}}>{children}</ApiContext.Provider>
+      <ApiContext.Provider value={{ tLista, cartObj, cartLista, kosarhozAd, SearchTable, deleteItem, deleteAll, postAdat , getAdat}}>{children}</ApiContext.Provider>
     );  
 }
