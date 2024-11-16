@@ -1,10 +1,12 @@
-import React, { useContext } from 'react'
+import React, { useContext, useState } from 'react'
 import { ApiContext } from '../../context/ApiContext'
 import TableRow from '../tablerow/TableRow'
 import { Button, Table } from 'react-bootstrap'
 
 const AdminTable = () => {
-    const { tLista, deleteAll } = useContext(ApiContext)
+    const { aktLista, deleteAll } = useContext(ApiContext)
+
+
     return (
         <div>
             <h1>
@@ -18,12 +20,12 @@ const AdminTable = () => {
                         <th>Ár</th>
                         <th>Kategória</th>
                         <th>Mennyiség</th>
-                        <th><Button onClick={()=> deleteAll()} variant="danger">Töröl-Mind</Button></th>
+                        <th><Button onClick={() => deleteAll()} variant="danger">Töröl-Mind</Button></th>
                     </tr>
                 </thead>
                 <tbody id='tbody'>
                     {
-                        tLista.length > 0 ? (tLista.map((item, i) => (
+                        aktLista.length > 0 ? (aktLista.map((item, i) => (
                             <TableRow key={i} item={item} />
                         ))) : (<tr>
                             <td colSpan="4" className="text-center">
