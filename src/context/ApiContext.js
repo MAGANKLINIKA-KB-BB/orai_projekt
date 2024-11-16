@@ -5,15 +5,16 @@ export const ApiContext  = createContext("")
 
 export const ApiProvider = ({children}) => {
     const [tLista, setTLista] = useState([]);
+    const [cartLista, setCartLista] = useState([]);
 
     //asszinkron hívás axion-al
-    function getAdat(vegpont) {
+    function getAdat(vegpont, callBackFunc) {
       MyAxios
         .get(vegpont)
         .then(function (response) {
           // handle success
           console.log(response.data);
-          setTLista(response.data);
+          callBackFunc(response.data);
         })
         .catch(function (error) {
           // handle error
@@ -41,11 +42,12 @@ export const ApiProvider = ({children}) => {
     }
   
     useEffect(() => {
-      getAdat("/products");
+      getAdat("/products", setTLista);
+      getAdat("/carts", setCartLista);
   
     }, []);
   
     return (
-      <ApiContext.Provider value={{ tLista, postAdat , getAdat}}>{children}</ApiContext.Provider>
+      <ApiContext.Provider value={{ tLista, cartLista, postAdat , getAdat}}>{children}</ApiContext.Provider>
     );  
 }
