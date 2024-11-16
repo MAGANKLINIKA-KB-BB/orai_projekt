@@ -46,6 +46,6 @@ export const ApiProvider = ({children}) => {
     }, []);
   
     return (
-      <ApiContext.Provider value={{ tLista, postAdat }}>{children}</ApiContext.Provider>
+      <ApiContext.Provider value={{ tLista, postAdat , getAdat}}>{children}</ApiContext.Provider>
     );  
 }
