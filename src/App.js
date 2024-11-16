@@ -9,6 +9,7 @@ function App() {
       <section>
         <h1>Hunor</h1>
       </section>
+      Karsai Bence
     </div>
   );
 }
