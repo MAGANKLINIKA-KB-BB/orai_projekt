@@ -1,5 +1,7 @@
 import React, { useContext } from 'react'
 import { ApiContext } from '../../context/ApiContext'
+import { Table } from 'react-bootstrap'
+import KosarRow from '../tablerow/KosarRow'
 
 const KosarTable = () => {
     const { cartLista } = useContext(ApiContext)
@@ -12,20 +14,15 @@ const KosarTable = () => {
                 <thead>
                     <tr>
                         <th>ID</th>
-                        <th>Termék név</th>
-                        <th>Ár</th>
-                        <th>kategória</th>
+                        <th>userId</th>
+                        <th>Dátum</th>
                     </tr>
                 </thead>
                 <tbody>
                     {
-                        tLista.length > 0 ? (cartLista[0].map((item, i) => (
-                            <TableRow key={i} item={item} />
-                        ))) : (<tr>
-                            <td colSpan="4" className="text-center">
-                                Nincs elérhető adat.
-                            </td>
-                        </tr>)
+                        cartLista.map((item, i) => (
+                            <KosarRow key={i} item={item} />
+                        ))
                     }
                 </tbody>
             </Table>
