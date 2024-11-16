@@ -1,8 +1,9 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import { ApiContext } from '../../context/ApiContext'
 import TableRow from '../tablerow/TableRow'
+import { Button, Table } from 'react-bootstrap'
 
-const Table = () => {
+const AdminTable = () => {
     const { tLista } = useContext(ApiContext)
     return (
         <div>
@@ -15,7 +16,8 @@ const Table = () => {
                         <th>ID</th>
                         <th>Termék név</th>
                         <th>Ár</th>
-                        <th>kategória</th>
+                        <th>Kategória</th>
+                        <th><Button variant="danger">Töröl-Mind</Button></th>
                     </tr>
                 </thead>
                 <tbody>
@@ -34,4 +36,4 @@ const Table = () => {
     )
 }
 
-export default Table
+export default AdminTable
