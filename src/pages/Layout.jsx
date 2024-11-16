@@ -1,16 +1,21 @@
 import React from 'react'
-import { Link, Outlet } from 'react-router-dom'
+import { Nav } from 'react-bootstrap'
+import { Outlet } from 'react-router-dom'
 
 const Layout = () => {
     return (
         <>
-            <nav>
-                <ul>
-                    <li><Link to={"/"}>Főoldal</Link></li>
-                    <li><Link to={"/kosar"}>Kosár</Link></li>
-                    <li><Link to={"/admin"}>Admin</Link></li>
-                </ul>
-            </nav>
+            <Nav activeKey="/">
+                <Nav.Item>
+                    <Nav.Link href="/">Active</Nav.Link>
+                </Nav.Item>
+                <Nav.Item>
+                    <Nav.Link href="/kosar">Kosár</Nav.Link>
+                </Nav.Item>
+                <Nav.Item>
+                    <Nav.Link href="/admin">Admin</Nav.Link>
+                </Nav.Item>
+            </Nav>
             <article>
                 <Outlet />
             </article>

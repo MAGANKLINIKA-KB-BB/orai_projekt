@@ -1,10 +1,10 @@
 import React from 'react'
 
-const Publicpage = () => {
+const PublicPage = () => {
   return (
     <div>Publicpage</div>
     
   )
 }
 
-export default Publicpage
+export default PublicPage
