@@ -8,13 +8,13 @@ function Termek(props) {
     const {kosarhozAd} = useContext(ApiContext);
     return (
         <Card className='card'>
-          <Card.Img variant="top" src={props.item.image} />
+          <Card.Img className='productPics' variant="top" src={props.item.image} />
           <Card.Body>
             <Card.Title>{props.item.title}</Card.Title>
-            <Card.Text>
+            <Card.Text className='text'>
               {props.item.description}
             </Card.Text>
-            <Button variant="primary" onClick={() =>{kosarhozAd(props)}}>Hozzáad</Button>
+            <Button className='button' variant="primary" onClick={() =>{kosarhozAd(props)}}>Hozzáad</Button>
           </Card.Body>
         </Card> 
       );

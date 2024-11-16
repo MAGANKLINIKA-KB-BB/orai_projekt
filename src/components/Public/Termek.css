@@ -11,3 +11,9 @@
     max-width: 18rem;
     box-sizing: border-box;
   }
+
+  .szuro{
+    margin: auto;
+    padding: 3%;
+    max-width: 80%;
+  }
