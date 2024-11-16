@@ -8,7 +8,7 @@ function Termekek() {
   return (  
     <div className='cards'>
         {tLista.map((item, i) => {
-            return <Termek item = {item}/>
+            return <Termek key={i} item = {item}/>
         })}
     </div>
   )

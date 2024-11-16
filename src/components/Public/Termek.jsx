@@ -1,9 +1,11 @@
+import { useContext } from 'react';
 import Button from 'react-bootstrap/Button';
 import Card from 'react-bootstrap/Card';
+import { ApiContext } from '../../context/ApiContext';
 
 function Termek(props) {
 
-
+    const {kosarhozAd} = useContext(ApiContext);
     return (
         <Card className='card'>
           <Card.Img variant="top" src={props.item.image} />
@@ -12,7 +14,7 @@ function Termek(props) {
             <Card.Text>
               {props.item.description}
             </Card.Text>
-            <Button variant="primary" onClick={kosarhozAd}>Hozzáad</Button>
+            <Button variant="primary" onClick={() =>{kosarhozAd(props)}}>Hozzáad</Button>
           </Card.Body>
         </Card> 
       );
