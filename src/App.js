@@ -1,5 +1,8 @@
 import logo from './logo.svg';
 import './App.css';
+import { BrowserRouter, Route, Routes } from 'react-router-dom';
+import Layout from './pages/Layout';
+import Kosar from './pages/Kosar';
 
 function App() {
   return (
@@ -7,10 +10,18 @@ function App() {
       <header className="App-header">
         <div><h1>Bordács Béla</h1></div>
       </header>
-      <section>
-        <h1>Hunor</h1>
-      </section>
-      Karsai Bence
+      <nav>
+        <BrowserRouter>
+          <Routes>
+            <Route path="/" element={<Layout />}>
+              <Route index element={<Public />} />
+              <Route path="kosar" element={<Kosar />} />
+              <Route path="admin" element={<Adminpage />} />
+              {/* <Route path="*" element={<NoPage />} /> */}
+            </Route>
+          </Routes>
+        </BrowserRouter>
+      </nav>
     </div>
   );
 }
