@@ -17,3 +17,7 @@
     padding: 3%;
     max-width: 80%;
   }
+
+  .price{
+    font-weight: bold;
+  }
