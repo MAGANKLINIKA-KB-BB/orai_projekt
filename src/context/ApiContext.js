@@ -76,7 +76,7 @@ export const ApiProvider = ({children}) => {
       getAdat("/products", setTLista);
       getAdat("/carts/2", setCartObj);
   
-      getAdat("/carts", setCartLista);  
+      getAdat("/carts", setCartList);  
     }, []);
 
     const kosarhozAd= (item) => {
@@ -87,6 +87,6 @@ export const ApiProvider = ({children}) => {
 
   
     return (
-      <ApiContext.Provider value={{ tLista, cartObj, cartLista, kosarhozAd, SearchTable, deleteItem, deleteAll, postAdat , getAdat}}>{children}</ApiContext.Provider>
+      <ApiContext.Provider value={{ tLista, cartObj, cartList, kosarhozAd, SearchTable, deleteItem, deleteAll, postAdat , getAdat}}>{children}</ApiContext.Provider>
     );  
 }
