@@ -1,9 +1,9 @@
 import React from 'react'
+import Termekek from '../components/Public/Termekek'
 
 const PublicPage = () => {
   return (
-    <div>Publicpage</div>
-    
+    <div><Termekek/></div>
   )
 }
 
