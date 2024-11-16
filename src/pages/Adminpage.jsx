@@ -1,6 +1,6 @@
 import React from 'react'
 
-function adminpage() {
+function Adminpage() {
   return (
     <div>
         <nav>
@@ -13,4 +13,4 @@ function adminpage() {
   )
 }
 
-export default adminpage
+export default Adminpage
