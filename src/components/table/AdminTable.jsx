@@ -17,7 +17,7 @@ const AdminTable = () => {
                         <th>Termék név</th>
                         <th>Ár</th>
                         <th>Kategória</th>
-                        <th>Menny.</th>
+                        <th>Mennyiség</th>
                         <th><Button onClick={()=> deleteAll()} variant="danger">Töröl-Mind</Button></th>
                     </tr>
                 </thead>
