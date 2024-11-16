@@ -1,0 +1,21 @@
+.form{
+    width: 80%;
+    margin: auto;
+    border: solid, rgb(187, 187, 187);
+    border-radius: 2rem;
+    padding: 5%;
+    background-color: rgba(187, 187, 187, 0.1);
+}
+
+.form button{
+    margin-top: 2rem;
+    width: 8rem;
+    border-radius: 0.5rem;
+}
+
+
+
+.loginh1{
+    margin: auto;
+    padding-bottom: 2rem;
+}

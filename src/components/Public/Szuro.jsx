@@ -4,7 +4,7 @@ import './Termek.css';
 function Szuro() {
     return (
         <Form className='szuro'>
-            <Form.Control type="text" placeholder="Termék keresése" />
+            <Form.Control type="text" placeholder="Search product by name" />
         </Form>
     );
   } 

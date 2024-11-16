@@ -14,8 +14,8 @@ function Termek(props) {
             <Card.Text className='text'>
               {props.item.description}
             </Card.Text>
-            <Card.Text className='price'>Ár: {props.item.price}$</Card.Text>
-            <Button className='button' variant="primary" onClick={() =>{kosarhozAd(props)}}>Hozzáad</Button>
+            <Card.Text className='price'>Price: {props.item.price}$</Card.Text>
+            <Button className='button' variant="primary" onClick={() =>{kosarhozAd(props)}}>Add to cart</Button>
           </Card.Body>
         </Card> 
       );
