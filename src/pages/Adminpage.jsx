@@ -3,7 +3,7 @@ import { Table } from 'react-bootstrap'
 import { ApiContext } from '../context/ApiContext'
 
 function Adminpage() {
-  const {getAdat} = useContext(ApiContext)
+  const {tLista} = useContext(ApiContext)
   return (
     <div>
         <h1>
@@ -19,7 +19,20 @@ function Adminpage() {
         </tr>
       </thead>
       <tbody>
-        <getAdat className="map"></getAdat>
+        {
+          tLista.length > 0 ? (tLista.map((item)=>(
+            <tr key={item.id}>
+              <td>{item.id}</td>
+              <td>{item.title}</td>
+              <td>{item.price}</td>
+              <td>{item.category}</td>
+            </tr>
+          ))) : (<tr>
+              <td colSpan="4" className="text-center">
+                Nincs elérhető adat.
+              </td>
+            </tr>)
+        }
       </tbody>
     </Table>
     </div>
