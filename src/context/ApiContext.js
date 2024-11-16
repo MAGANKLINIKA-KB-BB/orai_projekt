@@ -5,7 +5,7 @@ export const ApiContext  = createContext("")
 
 export const ApiProvider = ({children}) => {
     const [tLista, setTLista] = useState([]);
-    const [cartLista, setCartLista] = useState([]);
+    const [cartObj, setCartObj] = useState({});
 
     //asszinkron hívás axion-al
     function getAdat(vegpont, callBackFunc) {
@@ -43,11 +43,11 @@ export const ApiProvider = ({children}) => {
   
     useEffect(() => {
       getAdat("/products", setTLista);
-      getAdat("/carts", setCartLista);
+      getAdat("/carts/2", setCartObj);
   
     }, []);
   
     return (
-      <ApiContext.Provider value={{ tLista, cartLista, postAdat , getAdat}}>{children}</ApiContext.Provider>
+      <ApiContext.Provider value={{ tLista, cartObj, postAdat , getAdat}}>{children}</ApiContext.Provider>
     );  
 }

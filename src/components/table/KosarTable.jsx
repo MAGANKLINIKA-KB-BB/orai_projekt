@@ -4,11 +4,11 @@ import { Table } from 'react-bootstrap'
 import KosarRow from '../tablerow/KosarRow'
 
 const KosarTable = () => {
-    const { cartLista } = useContext(ApiContext)
+    const { cartObj } = useContext(ApiContext)
     return (
         <div>
             <h1>
-                Készlet infó
+                Felhasználó:{cartObj.userId} Létrehozás: {cartObj.date}
             </h1>
             <Table striped bordered hover>
                 <thead>
@@ -20,9 +20,9 @@ const KosarTable = () => {
                 </thead>
                 <tbody>
                     {
-                        cartLista.map((item, i) => (
-                            <KosarRow key={i} item={item} />
-                        ))
+                        cartObj.products.map((item, i) => {
+                            return <KosarRow key={i} item={item} />
+                        })
                     }
                 </tbody>
             </Table>
