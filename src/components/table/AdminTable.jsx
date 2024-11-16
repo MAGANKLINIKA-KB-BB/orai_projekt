@@ -4,7 +4,7 @@ import TableRow from '../tablerow/TableRow'
 import { Button, Table } from 'react-bootstrap'
 
 const AdminTable = () => {
-    const { tLista } = useContext(ApiContext)
+    const { tLista, deleteAll } = useContext(ApiContext)
     return (
         <div>
             <h1>
@@ -17,10 +17,11 @@ const AdminTable = () => {
                         <th>Termék név</th>
                         <th>Ár</th>
                         <th>Kategória</th>
-                        <th><Button variant="danger">Töröl-Mind</Button></th>
+                        <th>Menny.</th>
+                        <th><Button onClick={()=> deleteAll()} variant="danger">Töröl-Mind</Button></th>
                     </tr>
                 </thead>
-                <tbody>
+                <tbody id='tbody'>
                     {
                         tLista.length > 0 ? (tLista.map((item, i) => (
                             <TableRow key={i} item={item} />
