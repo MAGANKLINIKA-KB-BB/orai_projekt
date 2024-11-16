@@ -60,12 +60,18 @@ export const ApiProvider = ({children}) => {
           tbody.innerHTML = ""
     }
 
+    const kosarhozAd= (item) => {
+      const listaRegi = [...cartList];
+      listaRegi.push(item);
+      setCartList(listaRegi);
+  }
+
       const SearchTable = (event)=>{
         const value = event.target.value
 
         setText(value)
         tLista.forEach(e => {
-          if (value.lowerCase() == e.title.lowerCase()) {
+          if (value.lowerCase() === e.title.lowerCase()) {
             
           }
           
@@ -78,13 +84,6 @@ export const ApiProvider = ({children}) => {
   
       getAdat("/carts", setCartList);  
     }, []);
-
-    const kosarhozAd= (item) => {
-        const listaRegi = [...cartList];
-        listaRegi.push(item);
-        setCartList(listaRegi);
-    }
-
   
     return (
       <ApiContext.Provider value={{ tLista, cartObj, cartList, kosarhozAd, SearchTable, deleteItem, deleteAll, postAdat , getAdat}}>{children}</ApiContext.Provider>

@@ -4,7 +4,7 @@ import Searchbar from '../components/searchInput/Searchbar'
 
 function Adminpage() {
   return (
-    <div>
+    <div style={{margin:"2rem"}}>
       <Searchbar />
       <AdminTable />
     </div>
