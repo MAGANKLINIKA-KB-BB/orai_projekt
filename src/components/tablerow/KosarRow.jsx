@@ -1,13 +1,12 @@
 import React from 'react'
 
 const KosarRow = (props) => {
-  return (
-    <tr key={props.item.id}>
-        <td>{props.item.id}</td>
-            <td>{props.item.userId}</td>
-            <td>{props.item.date}</td>
+    return (
+        <tr key={props.item.id}>
+            <td>{props.item.productId}</td>
+            <td>{props.item.quantity}</td>
         </tr>
-  )
+    )
 }
 
 export default KosarRow

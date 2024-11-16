@@ -1,0 +1,19 @@
+.cards {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 16px;
+    justify-content: center;
+    padding: 16px;
+  }
+  
+  .card {
+    flex: 1 1 calc(25% - 16px);
+    max-width: 18rem;
+    box-sizing: border-box;
+  }
+
+  .szuro{
+    margin: auto;
+    padding: 3%;
+    max-width: 80%;
+  }

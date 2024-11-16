@@ -1,11 +1,12 @@
 import { createContext, useEffect, useState } from "react";
 import { MyAxios } from "./baseUrlAxios";
 
-export const ApiContext  = createContext("")
+export const ApiContext = createContext("")
 
 export const ApiProvider = ({children}) => {
     const [tLista, setTLista] = useState([]);
-    const [cartLista, setCartLista] = useState([]);
+    const [cartObj, setCartObj] = useState({});
+    const [cartList, setCartList] = useState([]);
     const [text ,setText] = useState("")
 
     //asszinkron hívás axion-al
@@ -73,10 +74,19 @@ export const ApiProvider = ({children}) => {
   
     useEffect(() => {
       getAdat("/products", setTLista);
+      getAdat("/carts/2", setCartObj);
+  
       getAdat("/carts", setCartLista);  
     }, []);
+
+    const kosarhozAd= (item) => {
+        const listaRegi = [...cartList];
+        listaRegi.push(item);
+        setCartList(listaRegi);
+    }
+
   
     return (
-      <ApiContext.Provider value={{ tLista, cartLista, SearchTable, deleteItem, deleteAll, postAdat , getAdat}}>{children}</ApiContext.Provider>
+      <ApiContext.Provider value={{ tLista, cartObj, cartLista, kosarhozAd, SearchTable, deleteItem, deleteAll, postAdat , getAdat}}>{children}</ApiContext.Provider>
     );  
 }
